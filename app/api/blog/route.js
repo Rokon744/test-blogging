@@ -1,7 +1,7 @@
 import { conneectDB } from "@/lib/config/db";
 import BlogModel from "@/lib/models/BlogModel";
 import { writeFile } from "fs/promises";
-import { unlink } from "fs/promises";
+// import { unlink } from "fs/promises";
 const { NextResponse } = require("next/server");
 
 
@@ -66,8 +66,8 @@ export async function DELETE(request) {
   }
 
   // Remove the image file from the server
-  const imagePath = `./public${blog.image}`;
-  await unlink(imagePath);
+  // const imagePath = `./public${blog.image}`;
+  // await unlink(imagePath);
 
   // Delete the blog from the database
   await BlogModel.findByIdAndDelete(id);
