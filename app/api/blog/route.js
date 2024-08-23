@@ -66,8 +66,8 @@ export async function DELETE(request) {
   }
 
   // Remove the image file from the server
-  // const imagePath = `./public${blog.image}`;
-  // await unlink(imagePath);
+  const imagePath = `./public${blog.image}`;
+  await unlink(imagePath);
 
   // Delete the blog from the database
   await BlogModel.findByIdAndDelete(id);

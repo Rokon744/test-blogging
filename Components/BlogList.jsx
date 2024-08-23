@@ -27,10 +27,10 @@ const BlogList = () => {
                 <button onClick={() => setMenu("Lifestyle")} className={menu === "Lifestyle" ? 'bg-black text-white py-1 px-4 rounded-sm' : "Lifestyle"}>Lifestyle</button>
             </div>
             <div className='flex justify-around flex-wrap gap-1 gap-y-10 mb-16 xl:mx-24'>
-                {data.length=== 0 ? <h1>Loading</h1> :
-                data.filter((item) => menu === "All" ? true : item.category === menu ? true : false).map((item, index) => {
-                    return <BlogItem key={index} id={item._id} image={item.image} title={item.title} description={item.description} category={item.category} />
-                })
+                {data.length === 0 ? <h1 className='text-3xl text-red-800'>Loading...</h1> :
+                    data.filter((item) => menu === "All" ? true : item.category === menu ? true : false).map((item, index) => {
+                        return <BlogItem key={index} id={item._id} image={item.image} title={item.title} description={item.description} category={item.category} />
+                    })
                 }
             </div>
         </div>
